@@ -22,6 +22,11 @@ public:
 		point p2 = { 125, 175 };
 		points.push_back(p1);
 		points.push_back(p2);
+		for (int i = 0; i < 20; i++)
+		{
+			point p = { rand() % 256, rand() % 256 };
+			points.push_back(p);
+		}
 	}
 
 public:
@@ -36,7 +41,7 @@ public:
 		// Called once per frame, draws random coloured pixels		
 		for (auto p : points) {
 			for (int i = 0; i < 10; i++)
-				for (int j = 0; j < 10; j++)
+				for (int j = 0; j < 5; j++)
 					Draw(p.x+i, p.y+j, olc::Pixel(olc::RED));
 		}
 
